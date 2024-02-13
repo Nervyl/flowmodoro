@@ -1,0 +1,84 @@
+.timer--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer--button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+
+    /* box-shadow: 0px 0px 10px rgba(95, 255, 92, 0.5); */
+    /* background: linear-gradient(#5fff5c, #39a238); */
+    transition: transform 200ms;
+}
+
+.timer--inner-circle {
+    content: "";
+    position: absolute;
+    width: 306px;
+    height: 306px;
+    opacity: 0.9;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: black;
+
+    transition: transform 200ms;
+}
+
+.timer--outer-circle {
+    content: "";
+    position: absolute;
+
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+
+    background: #5fff5c;
+    box-shadow: 0px 0px 10px #5fff5c;
+    transition: transform 200ms, box-shadow 100ms;
+}
+
+.timer--time {
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+    font-size: 88px;
+    color: var(--font-color);
+}
+
+.timer--button:hover .timer--outer-circle {
+    transform: scale(1.02);
+}
+
+.timer--button:active {
+    transform: scale(0.91);
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes hoverRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
