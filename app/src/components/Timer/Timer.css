@@ -45,7 +45,7 @@
 
     background: #5fff5c;
     box-shadow: 0px 0px 10px #5fff5c;
-    transition: transform 200ms, box-shadow 200ms;
+    transition: transform 200ms, box-shadow 100ms;
 }
 
 .timer--time {
@@ -59,7 +59,6 @@
 
 .timer--button:hover .timer--outer-circle {
     transform: scale(1.02);
-    box-shadow: 0px 0px 20px 5px rgba(95, 255, 92, 0.5);
 }
 
 .timer--button:active {

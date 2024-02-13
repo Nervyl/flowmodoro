@@ -39,6 +39,8 @@ export default function Timer({ status }: { status: string }) {
 
     const [style, setStyle] = useState<object>({});
 
+    const [hovered, setHovered] = useState<boolean>(false);
+
     // Fetch colors and set appropriate colors
     useEffect(() => {
         chrome.storage.local.get(["colors"], (result) => {
@@ -46,16 +48,21 @@ export default function Timer({ status }: { status: string }) {
 
             setStyle(() => ({
                 background: `${currentColor}`,
-                boxShadow: `0px 0px 10px ${currentColor}`,
+                boxShadow: `0px 0px ${hovered ? "25px" : "10px"} ${currentColor}`,
             }));
         });
-    }, [status]);
+    }, [status, hovered]);
 
     console.log("Timer Rendered", time, status);
 
     return (
         <div className="timer--container">
-            <button className="timer--button" onClick={handleTimerClick}>
+            <button
+                className="timer--button"
+                onClick={handleTimerClick}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+            >
                 <div style={style} className="timer--outer-circle"></div>
                 <div className="timer--inner-circle"></div>
                 <h2 className="timer--time">{timeDisplay}</h2>
