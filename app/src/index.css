@@ -1,28 +1,14 @@
 * {
-    box-sizing: border-box;
-}
-
-:root {
-    --background-color: #0f0f10;
-    --primary-color: #282828;
-    --font-color: #f9efdb;
-}
-
-body,
-h1,
-p,
-ul,
-li {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: "Rubik", sans-serif;
     font-size: 16px;
     color: var(--font-color);
-}
-
-body {
-    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

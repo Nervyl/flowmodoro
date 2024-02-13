@@ -1,0 +1,45 @@
+.navbar--container {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.navbar--container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.navbar--button {
+    text-align: center;
+    color: var(--font-color);
+    background: none;
+    cursor: pointer;
+    outline: inherit;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    opacity: 70%;
+
+    transition: transform 200ms;
+}
+
+.selected {
+    opacity: 100%;
+}
+
+.navbar--button:hover {
+    opacity: 0.8;
+    text-shadow: 0px 0px 2px var(--font-color);
+}
+
+.navbar--button:active {
+    transform: scale(0.98);
+}

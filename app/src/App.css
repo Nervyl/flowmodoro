@@ -1,0 +1,16 @@
+:root {
+    --background-color: #1e1e1e;
+    --primary-color: #282828;
+    --font-color: #f9efdb;
+}
+
+.app-container {
+    height: 580px;
+    width: 385px;
+    background-color: var(--background-color);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
