@@ -5,17 +5,6 @@ import Coming from "./components/Coming/Coming";
 import Navbar from "./components/Navbar/Navbar";
 import Settings from "./components/Settings/Settings";
 import { useState, useEffect } from "react";
-// import { chrome } from "chrome";
-
-// function Apasdp() {
-//     return (
-//         <div className="app-container">
-//             <Header text="Settings" />
-//             <Settings />
-//             <Navbar />
-//         </div>
-//     );
-// }
 
 export default function App() {
     const [selectedTab, setSelectedTab] = useState("timer");
@@ -41,6 +30,10 @@ export default function App() {
             }),
         []
     );
+
+    useEffect(() => {
+        chrome.runtime.sendMessage({ action: "popupOpened" });
+    }, []);
 
     const headerText = {
         timer: {

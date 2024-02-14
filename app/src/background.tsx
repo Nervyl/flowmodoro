@@ -1,6 +1,6 @@
 // Init local storage
 
-chrome.storage.local.get(["colors", "status", "time", "divisor"], (result) => {
+chrome.storage.local.get(["colors", "status", "time", "divisor", "volume"], (result) => {
     chrome.storage.local.set(
         {
             colors: result.colors ?? {
@@ -11,9 +11,10 @@ chrome.storage.local.get(["colors", "status", "time", "divisor"], (result) => {
             status: result.status ?? "pause",
             time: result.time ?? 0,
             divisor: result.divisor ?? 5,
-            alarm: new Audio("../sounds/alarm.wav"),
+            volume: result.volume ?? 50,
         },
         () => {
+            console.log("Running the code to start the script...");
             if (chrome.runtime.lastError) {
                 console.error(chrome.runtime.lastError);
             } else if (result.status === "work") startWork();
@@ -136,5 +137,10 @@ function startPause() {
 
 function playAudio() {
     const audio = new Audio("../sounds/alarm.wav");
-    audio.play();
+    chrome.storage.local.get(["volume"], (result) => {
+        console.log("AUDIO VOLUME:", audio.volume);
+        audio.volume = result.volume / 100;
+        console.log("AUDIO VOLUME:", audio.volume);
+        audio.play();
+    });
 }
