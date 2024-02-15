@@ -1,0 +1,110 @@
+.settings--container {
+    height: 355px;
+    width: 100%;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.settings--section-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.settings--section-title {
+    margin-left: 12px;
+    margin-bottom: -4px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.settings--number {
+    width: 51px;
+    height: 32px;
+    background: #d9d9d9;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    appearance: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    font-size: 16px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.settings--color {
+    width: 51px;
+    height: 32px;
+    border-radius: 5px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-border: none;
+    border: none;
+    outline: none;
+}
+
+.settings--range {
+    width: 170px;
+}
+
+.settings--option-container {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 0px 24px;
+    height: 50px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.settings--option-text {
+    font-family: "Rubik" sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    color: var(--font-color);
+    margin-right: auto;
+}
+
+.settings--button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.settings--reset-button {
+    display: flex;
+    border: none;
+    /* outline: none; */
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 48%;
+    border-radius: 15px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+    background-color: var(--primary-color);
+    font-family: "Rubik" sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.settings--reset-button:active {
+    transform: scale(0.95);
+}

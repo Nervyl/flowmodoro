@@ -3,8 +3,8 @@ import Header from "./components/Header/Header";
 import Timer from "./components/Timer/Timer";
 import Coming from "./components/Coming/Coming";
 import Navbar from "./components/Navbar/Navbar";
+import Settings from "./components/Settings/Settings";
 import { useState, useEffect } from "react";
-// import { chrome } from "chrome";
 
 export default function App() {
     const [selectedTab, setSelectedTab] = useState("timer");
@@ -31,7 +31,11 @@ export default function App() {
         []
     );
 
-    const headerText: string | undefined = {
+    useEffect(() => {
+        chrome.runtime.sendMessage({ action: "popupOpened" });
+    }, []);
+
+    const headerText = {
         timer: {
             work: "Get to Work!",
             break: "Take a Break!",
@@ -42,9 +46,12 @@ export default function App() {
         settings: "Settings",
     }[selectedTab];
 
-    const mainElement = selectedTab === "timer" ? <Timer status={status} /> : <Coming />;
-
-    console.log("App Rendered", status);
+    const mainElement = {
+        timer: <Timer status={status} />,
+        tasks: <Coming />,
+        analytics: <Coming />,
+        settings: <Settings />,
+    }[selectedTab];
 
     return (
         <div className="app-container">
