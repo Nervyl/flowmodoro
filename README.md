@@ -4,9 +4,8 @@ Flowmodoro is an application designed to help you enhance your productivity usin
 
 ## Getting Started
 
-1. Clone the repository to your local machine and build with npm or download the dist folder through releases.
-
-2. Allow developer mode in your browser extension settings and use the "load unpacked" option.
+1. Navigate to the [GitHub releases](https://github.com/Nervyl/flowmodoro/releases/) section and find the latest version.
+2. Follow the installation instructions included or download the source and build with npm.
 
 ### Key Features:
 
