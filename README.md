@@ -2,7 +2,7 @@
 
 Flowmodoro is an application designed to help you enhance your productivity using the Flowtime Technique. You're encouraged to work until your focus starts to wane. Then the duration of your break session is calculated based on the length of the work session. This approach allows you to enjoy the benefits of fruequent breaks, without flow-breaking interruptions and strict time constraints.
 
-## Getting Started
+## Installation
 
 1. Navigate to the [GitHub releases](https://github.com/Nervyl/flowmodoro/releases/) section and find the latest version.
 2. Follow the installation instructions included or download the source and build with npm.
