@@ -4,9 +4,20 @@ import Timer from "./components/Timer/Timer";
 import Coming from "./components/Coming/Coming";
 import Navbar from "./components/Navbar/Navbar";
 import Settings from "./components/Settings/Settings";
+import Tasks from "./components/Tasks/Tasks";
 import { useState, useEffect } from "react";
 
-export default function App() {
+export function Test() {
+    return (
+        <div className="app-container">
+            <Header text={"Tasks"} />
+            <Tasks />
+            <Navbar selectedTab={"tasks"} setSelectedTab={console.log} />
+        </div>
+    );
+}
+
+export default function App2() {
     const [selectedTab, setSelectedTab] = useState("timer");
     const [status, setStatus] = useState("break");
 
@@ -48,7 +59,7 @@ export default function App() {
 
     const mainElement = {
         timer: <Timer status={status} />,
-        tasks: <Coming />,
+        tasks: <Tasks />,
         analytics: <Coming />,
         settings: <Settings />,
     }[selectedTab];

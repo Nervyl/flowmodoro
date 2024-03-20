@@ -1,34 +1,37 @@
 chrome.runtime.onStartup.addListener(() => {});
 
 // Init local storage
-chrome.storage.local.get(["colors", "status", "time", "divisor", "volume", "startStamp"], (result) => {
-    console.log("Initializing local storage!");
+chrome.storage.local.get(
+    ["colors", "status", "time", "divisor", "volume", "startStamp"],
+    (result) => {
+        console.log("Initializing local storage!");
 
-    chrome.storage.local.set(
-        {
-            colors: result.colors ?? {
-                work: "#FF3737",
-                break: "#5FFF5C",
-                pause: "#FBFF37",
+        chrome.storage.local.set(
+            {
+                colors: result.colors ?? {
+                    work: "#FF3737",
+                    break: "#5FFF5C",
+                    pause: "#FBFF37",
+                },
+                status: result.status ?? "pause",
+                time: result.time ?? 0,
+                divisor: result.divisor ?? 5,
+                volume: result.volume ?? 50,
+                startStamp: result.startStamp ?? 0,
             },
-            status: result.status ?? "pause",
-            time: result.time ?? 0,
-            divisor: result.divisor ?? 5,
-            volume: result.volume ?? 50,
-            startStamp: result.startStamp ?? 0,
-        },
-        () => {
-            console.log("Running the code to start the script...");
-            if (chrome.runtime.lastError) {
-                console.error(chrome.runtime.lastError);
-            } else {
-                if (result.status === "work") startWork();
-                else if (result.status === "break" || result.status === "pause") startPause();
-                else console.log("None started!", result.status);
+            () => {
+                console.log("Running the code to start the script...");
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError);
+                } else {
+                    if (result.status === "work") startWork();
+                    else if (result.status === "break" || result.status === "pause") startPause();
+                    else console.log("None started!", result.status);
+                }
             }
-        }
-    );
-});
+        );
+    }
+);
 
 chrome.runtime.onMessage.addListener(async (request: { action: string; data: string }) => {
     console.log("message received");
