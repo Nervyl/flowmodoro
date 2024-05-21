@@ -1,0 +1,43 @@
+.analytics--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: none;
+    background: transparent;
+
+    width: 320px;
+    height: 320px;
+}
+
+.analytics--box {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+    padding: 2rem;
+    background-color: var(--accent-color);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.analytics--time {
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+    font-size: 66px;
+    color: var(--font-color);
+}
+
+.analytics--title {
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--font-color);
+}

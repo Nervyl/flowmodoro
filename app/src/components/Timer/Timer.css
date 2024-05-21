@@ -17,8 +17,6 @@
     width: 320px;
     height: 320px;
 
-    /* box-shadow: 0px 0px 10px rgba(95, 255, 92, 0.5); */
-    /* background: linear-gradient(#5fff5c, #39a238); */
     transition: transform 200ms;
 }
 
