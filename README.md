@@ -36,3 +36,12 @@ Flowmodoro is an application designed to help you enhance your productivity usin
     - Plan and organize tasks within the app by creating and managing a to-do list.
 
 Feel free to explore the features and make the Flowmodoro Timer app a valuable companion in your journey to enhance productivity. If you have any feedback or suggestions, we'd love to hear from you! ✨✨
+
+## Screenshots
+
+
+![pause](https://github.com/jakubkuceradev/flowmodoro/assets/73035286/74f38468-8503-4ecb-b8e1-ccfdc1350e80)
+![tasks](https://github.com/jakubkuceradev/flowmodoro/assets/73035286/fd1e1153-ed94-459d-9672-694d741524ca)
+
+![analytics](https://github.com/jakubkuceradev/flowmodoro/assets/73035286/2a563dba-d0e4-4ab9-8eff-b80de33ee8a1)
+![settings](https://github.com/jakubkuceradev/flowmodoro/assets/73035286/7ebba9cb-c2fe-49a3-8c69-bedf83ca23c3)
