@@ -1,11 +1,12 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Timer from "./components/Timer/Timer";
-import Coming from "./components/Coming/Coming";
+// import Coming from "./components/Coming/Coming";
 import Navbar from "./components/Navbar/Navbar";
 import Settings from "./components/Settings/Settings";
 import Tasks from "./components/Tasks/Tasks";
 import { useState, useEffect } from "react";
+import Analytics from "./components/Analytics/Analytics";
 
 export function Test() {
     return (
@@ -23,10 +24,13 @@ export default function App2() {
 
     useEffect(
         () =>
-            chrome.runtime.onMessage.addListener((request: { action: string; status: string }) => {
-                console.log("App message received", request);
-                if (request.action === "updateStatus") setStatus(request.status);
-            }),
+            chrome.runtime.onMessage.addListener(
+                (request: { action: string; status: string }) => {
+                    console.log("App message received", request);
+                    if (request.action === "updateStatus")
+                        setStatus(request.status);
+                }
+            ),
         []
     );
 
@@ -60,7 +64,7 @@ export default function App2() {
     const mainElement = {
         timer: <Timer status={status} />,
         tasks: <Tasks />,
-        analytics: <Coming />,
+        analytics: <Analytics />,
         settings: <Settings />,
     }[selectedTab];
 
